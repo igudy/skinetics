@@ -4,7 +4,17 @@ module.exports = {
   content: ["./app/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        clash: ["ClashDisplayRegular"],
+        clashBold: ["ClashDisplayBold"],
+        clashLight: ["ClashDisplayLight"],
+        clashMedium: ["ClashDisplayMedium"],
+        clashSemi: ["ClashDisplaySemibold"],
+        clashExtra: ["ClashDisplayExtralight"],
+        mono: ["SpaceMono"],
+      },
+    },
   },
   plugins: [],
-}
+};
