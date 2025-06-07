@@ -12,7 +12,7 @@ export default function AuthPage() {
       className="flex-1 w-full h-full"
     >
       <View className="flex-1 justify-end items-center pb-12 bg-black/30">
-        {/* <Text className="text-white text-4xl font-bold mb-10 font-clashDisplayBold">
+        {/* <Text className="text-white text-4xl font-bold mb-10 font-clashBold">
           Skinetics
         </Text> */}
 
@@ -20,7 +20,7 @@ export default function AuthPage() {
           onPress={() => router.push("/auth/login")}
           className="w-11/12 bg-white py-4 rounded-md mb-4"
         >
-          <Text className="text-black text-center font-clashDisplayBold text-base">
+          <Text className="text-black text-center font-clashSemi text-base">
             Log in
           </Text>
         </TouchableOpacity>
@@ -29,7 +29,7 @@ export default function AuthPage() {
           onPress={() => router.push("/auth/register")}
           className="w-11/12 bg-black py-4 rounded-md"
         >
-          <Text className="text-white text-center font-clashDisplayBold text-base">
+          <Text className="text-white text-center font-clashSemi text-base">
             Sign Up
           </Text>
         </TouchableOpacity>
