@@ -12,7 +12,7 @@ export default function AuthPage() {
       className="flex-1 w-full h-full"
     >
       <View className="flex-1 justify-end items-center pb-12 bg-black/30">
-        {/* <Text className="text-white text-4xl font-bold mb-10 font-clashBold">
+        {/* <Text className="text-white text-4xl font-clashBold mb-10 font-clashBold">
           Skinetics
         </Text> */}
 

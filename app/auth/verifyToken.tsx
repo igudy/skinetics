@@ -101,7 +101,7 @@ export default function VerifyToken() {
 
       {/* Send code again */}
       <Text className="text-center text-gray-500">
-        Send code again <Text className="font-bold">00:20</Text>
+        Send code again <Text className="font-clashBold">00:20</Text>
       </Text>
     </View>
   );

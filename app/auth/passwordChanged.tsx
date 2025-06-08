@@ -35,7 +35,7 @@ export default function PasswordChanged() {
 
   const onSubmit = (data: any) => {
     console.log("Login form data:", data);
-    router.push("/auth/emailLogin");
+    router.push("/onBoarding/gender");
   };
 
   return (
