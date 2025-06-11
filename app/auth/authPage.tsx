@@ -17,7 +17,8 @@ export default function AuthPage() {
         </Text> */}
 
         <TouchableOpacity
-          onPress={() => router.push("/auth/login")}
+          //   onPress={() => router.push("/auth/login")}
+          onPress={() => router.push("/home/Homepage")}
           className="w-11/12 bg-white py-4 rounded-md mb-4"
         >
           <Text className="text-black text-center font-clashSemi text-base">

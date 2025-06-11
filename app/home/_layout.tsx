@@ -1,72 +1,168 @@
-import { Tabs } from "expo-router";
-import React from "react";
-import { Platform, Text } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { Tabs, useRouter } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
+import { View, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { CustomLabel } from "../utils/CustomLabel";
+import { useNavigation } from "expo-router";
 
-const CustomLabel = ({
-  label,
-  focused,
-}: {
-  label: string;
-  focused: boolean;
-}) => (
-  <Text
-    style={{
-      fontFamily: "ClashDisplayMedium",
-      fontSize: 12,
-      color: focused ? "#8B5CF6" : "#6B7280",
-    }}
-  >
-    {label}
-  </Text>
-);
+export default function Layout() {
+  const navigation = useNavigation();
+  const router = useRouter();
 
-export default function TabLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarStyle: {
-          backgroundColor: "#FFFFFF",
-          borderTopWidth: 0,
-          elevation: 0,
-          position: Platform.select({
-            ios: "absolute",
-            default: "relative",
-          }),
-        },
-      }}
-    >
-      <Tabs.Screen
-        name="homepage"
-        options={{
-          tabBarLabel: ({ focused }) => (
-            <CustomLabel label="Homepage" focused={focused} />
-          ),
-          tabBarIcon: ({ focused, size }) => (
-            <Ionicons
-              name="home-outline"
-              size={size}
-              color={focused ? "#8B5CF6" : "#6B7280"}
-            />
-          ),
+    <>
+      <Tabs
+        screenOptions={{
+          tabBarStyle: {
+            backgroundColor: "white",
+            borderTopWidth: 0,
+            height: 70,
+            position: "relative",
+          },
+          tabBarActiveTintColor: "#000000",
+          tabBarInactiveTintColor: "#000000",
+          headerShown: false,
         }}
-      />
-      <Tabs.Screen
-        name="notifications"
-        options={{
-          tabBarLabel: ({ focused }) => (
-            <CustomLabel label="Notifications" focused={focused} />
-          ),
-          tabBarIcon: ({ focused, size }) => (
-            <Ionicons
-              name="notifications-outline"
-              size={size}
-              color={focused ? "#8B5CF6" : "#6B7280"}
-            />
-          ),
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="Homepage"
+          options={{
+            tabBarLabel: ({ focused }) => (
+              <CustomLabel
+                label="Home"
+                focused={focused}
+                style={focused ? styles.activeLabel : styles.inactiveLabel}
+              />
+            ),
+            tabBarIcon: ({ focused, size }) => (
+              <Ionicons
+                name="home-outline"
+                size={size}
+                color="#000"
+                style={focused ? styles.activeIcon : undefined}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="Products"
+          options={{
+            tabBarLabel: ({ focused }) => (
+              <CustomLabel
+                label="Products"
+                focused={focused}
+                style={focused ? styles.activeLabel : styles.inactiveLabel}
+              />
+            ),
+            tabBarIcon: ({ focused, size }) => (
+              <Ionicons
+                name="pricetag-outline"
+                size={size}
+                color="#000"
+                style={focused ? styles.activeIcon : undefined}
+              />
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="Scan"
+          options={{
+            tabBarButton: () => (
+              <View style={styles.scanButtonContainer}>
+                <TouchableOpacity
+                  onPress={() => router.push("/home/Scan")}
+                  style={styles.scanButton}
+                >
+                  <Image
+                    source={require("../../assets/icons/scan.png")}
+                    style={styles.scanImage}
+                    resizeMode="contain"
+                  />
+                </TouchableOpacity>
+              </View>
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="Explore"
+          options={{
+            tabBarLabel: ({ focused }) => (
+              <CustomLabel
+                label="Explore"
+                focused={focused}
+                style={focused ? styles.activeLabel : styles.inactiveLabel}
+              />
+            ),
+            tabBarIcon: ({ focused, size }) => (
+              <Ionicons
+                name="compass-outline"
+                size={size}
+                color="#000"
+                style={focused ? styles.activeIcon : undefined}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="Profile"
+          options={{
+            tabBarLabel: ({ focused }) => (
+              <CustomLabel
+                label="Profile"
+                focused={focused}
+                style={focused ? styles.activeLabel : styles.inactiveLabel}
+              />
+            ),
+            tabBarIcon: ({ focused, size }) => (
+              <Ionicons
+                name="person-outline"
+                size={size}
+                color="#000"
+                style={focused ? styles.activeIcon : undefined}
+              />
+            ),
+          }}
+        />
+      </Tabs>
+    </>
   );
 }
+
+const styles = StyleSheet.create({
+  activeLabel: {
+    fontWeight: "bold",
+  },
+  inactiveLabel: {
+    fontWeight: "normal",
+  },
+  activeIcon: {
+    fontWeight: "bold",
+  },
+  scanButtonContainer: {
+    position: "absolute",
+    bottom: 10,
+    left: "50%",
+    marginLeft: -30,
+    zIndex: 10,
+  },
+  scanButton: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+    // elevation: 5,
+    // shadowColor: "#000",
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.25,
+    // shadowRadius: 3.84,
+    borderWidth: 1,
+    borderColor: "#E0E0E0",
+  },
+  scanImage: {
+    width: 25,
+    height: 25,
+    tintColor: "white",
+  },
+});

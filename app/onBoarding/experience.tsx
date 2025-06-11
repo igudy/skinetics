@@ -62,6 +62,7 @@ const Experience = () => {
             );
           })}
         </View>
+        
         {/* Continue Button */}
         <Pressable
           className="bg-black py-4 rounded-xl items-center"

@@ -14,7 +14,7 @@ export default function PasswordChanged() {
 
       {/* Login Button */}
       <TouchableOpacity
-        onPress={() => router.push("/home/homepage")}
+        onPress={() => router.push("/home/Homepage")}
         className="bg-black py-4 rounded-lg mt-6"
       >
         <Text className="text-white text-center font-clashMedium text-base">
