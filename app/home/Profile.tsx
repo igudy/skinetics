@@ -8,8 +8,6 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import {
-  CheckCircle,
-  UserCog,
   Sparkles,
   Droplets,
   CircleDashed,

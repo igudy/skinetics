@@ -3,6 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { CustomLabel } from "../utils/CustomLabel";
 import { useNavigation } from "expo-router";
+import ScanIcon from "../../assets/icons/scan.svg";
 
 export default function Layout() {
   const navigation = useNavigation();
@@ -73,11 +74,13 @@ export default function Layout() {
                   onPress={() => router.push("/home/Scan")}
                   style={styles.scanButton}
                 >
-                  <Image
-                    source={require("../../assets/icons/scan.png")}
+                  {/* <Image
+                    // source={require("../../assets/icons/scan.svg")}
+                    source={ScanIcon}
                     style={styles.scanImage}
                     resizeMode="contain"
-                  />
+                  /> */}
+                  <ScanIcon width={25} height={25} fill="white" />
                 </TouchableOpacity>
               </View>
             ),
