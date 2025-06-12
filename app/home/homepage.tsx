@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { Bell } from "lucide-react-native";
+import { router } from "expo-router";
 
 export default function Homepage() {
   const skinTypes = [
@@ -86,7 +87,10 @@ export default function Homepage() {
           source={require("../../assets/images/home/scan_face.png")}
           className="w-full h-56 object-cover"
         />
-        <TouchableOpacity className="absolute bottom-4 bg-white px-4 py-2 rounded-lg shadow">
+        <TouchableOpacity
+          className="absolute bottom-4 bg-white px-4 py-2 rounded-lg shadow"
+          onPress={() => router.push("/home/Scan")}
+        >
           <Text className="text-black font-clashMedium">Tap to scan</Text>
         </TouchableOpacity>
       </View>

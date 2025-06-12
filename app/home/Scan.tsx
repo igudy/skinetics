@@ -37,7 +37,6 @@ const Scan = () => {
 
   return (
     <ScrollView className="flex-1 bg-white px-4 pt-12">
-      {/* Header */}
       <View className="flex-row items-center mb-6">
         <ChevronLeft size={22} color="black" />
         <Text className="ml-2 text-2xl font-clashBold text-black">
