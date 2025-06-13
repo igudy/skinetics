@@ -18,6 +18,8 @@ import {
   ChevronRight,
   PenLine,
   SquareCheck,
+  ChevronLeft,
+  ShoppingBag,
 } from "lucide-react-native";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
@@ -29,6 +31,19 @@ const Profile = () => {
   return (
     <ScrollView className="bg-gray-50 p-6" showsVerticalScrollIndicator={false}>
       <SafeAreaView>
+        <View className="flex-row items-center justify-between mb-6">
+          <TouchableOpacity
+            onPress={() => router.back()}
+            className="p-2 bg-gray-100 rounded-full"
+          >
+            <ChevronLeft size={20} color="black" />
+          </TouchableOpacity>
+          <Text className="text-2xl font-clashBold text-gray-900">Academy</Text>
+          <TouchableOpacity className="p-2 bg-gray-100 rounded-full">
+            <ShoppingBag size={20} color="black" />
+          </TouchableOpacity>
+        </View>
+
         <View className="flex-row justify-between items-center mb-10">
           <TouchableOpacity
             onPress={() => router.back()}

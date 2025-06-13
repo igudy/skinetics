@@ -32,13 +32,12 @@ const Products = () => {
 
   return (
     <View className="flex-1 bg-gray-50">
-      {/* Header */}
-      <View className="bg-white pt-12 px-6 pb-4 shadow-sm">
+      <View className="bg-white pt-12 px-6 pb-4">
         <View className="flex-row items-center justify-between mb-6">
           <TouchableOpacity className="p-2 bg-gray-100 rounded-full">
             <ChevronLeft size={20} color="black" />
           </TouchableOpacity>
-          <Text className="text-2xl font-clashMedium text-gray-900">
+          <Text className="text-2xl font-clashBold text-gray-900">
             Our Products
           </Text>
           <TouchableOpacity className="p-2 bg-gray-100 rounded-full">
@@ -76,10 +75,7 @@ const Products = () => {
       </View>
 
       {/* Product Grid */}
-      <ScrollView
-        className="flex-1 p-3 pt-6"
-        showsVerticalScrollIndicator={false}
-      >
+      <ScrollView className="flex-1 p-2" showsVerticalScrollIndicator={false}>
         <View className="flex-row flex-wrap justify-between gap-x-3">
           {filtered.map((product: any) => (
             <TouchableOpacity
